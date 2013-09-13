@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	form(method="post", action="save")
+	form(method="post", action="/save")
 		input(type="hidden", name="num", id="num", value="#{data.length}")
 		-for(var i = 0; i < data.length; i++) {
 			input(type="hidden", id="url" + i, name="url" +i, value="#{data[i].url}")
