@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	form(method="post", action="/insert")
+		label(for="urls") URLS:
+			textarea(name="urls", id="urls", rows="40", cols="80") 
+		input(type="submit", name="submit", value="Insert")

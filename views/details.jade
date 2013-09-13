@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	form(method="post", action="save")
+		input(type="hidden", name="num", id="num", value="#{data.length}")
+		-for(var i = 0; i < data.length; i++) {
+			input(type="hidden", id="url" + i, name="url" +i, value="#{data[i].url}")
+			label(for="title" + i) Title:
+				input(type="text", name="title" + i, id="title" + i, value="#{data[i].title}")
+			label(for="price" + i) Price: 
+				input(type="text", name="price" + i, id="price" + i, value="#{data[i].price}")
+			label(for="brand" + i) Brand:
+				input(type="text", name="brand" + i, id="brand" + i, value="#{data[i].brand}")
+			label(for="shop" + i) Shop:
+				input(type="text", name="shop" + i, id="shop" + i, value="#{data[i].shop}")
+			label(for="type" + i) Type:
+				input(type="text", name="type" + i, id="type" + i, value="#{data[i].type}")
+			label(for="collection" + i) Collection:
+				input(type="text", name="collection" + i, id="collection" + i)
+			label(for="comment" + i) Comment
+				input(type="text", name="comment" + i, id="comment" + i)
+			input(type="hidden", name="imageUrl" + i, id="imageUrl" + i, value="#{data[i].imageUrl}")
+			textarea(name="tags" + i, id="tags" + i) comma, seperated, tags
+			img(src="#{data[i].imageUrl}")
+			br
+		-}
+			input(type="submit", name="submit", value="Save")
+
+
