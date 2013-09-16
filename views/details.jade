@@ -20,7 +20,7 @@ block content
 			label(for="comment" + i) Comment
 				input(type="text", name="comment" + i, id="comment" + i)
 			input(type="hidden", name="imageUrl" + i, id="imageUrl" + i, value="#{data[i].imageUrl}")
-			textarea(name="tags" + i, id="tags" + i) comma, seperated, tags
+			textarea(name="tags" + i, id="tags" + i, placeholder="comma, seperated, tags")
 			img(src="#{data[i].imageUrl}")
 			br
 		-}
